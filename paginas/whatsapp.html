@@ -4,39 +4,61 @@
   <meta charset="UTF-8">
   <title>Instagram</title>
         <style>
-            html, body {
+    html, body {
         margin: 0;
         width: 100%;
         height: 100%;
         }
 
-        img {
+    img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
         }
-        footer a {
-        display: flex;          
-        background-color: rgba(37, 211, 102, 1);    
-        color: white;                 
-        font-weight: 600;               
-        font-size: 14px;               
-        padding: 6px 16px;             
-        border-radius: 1px;             
-        text-decoration: none;         
-        text-align: center;
+    footer a {
+        position: relative;
+        display: flex;
+        background-color: #25D366;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 6px 16px;
+        border-radius: 2px;
+        text-decoration: none;
         cursor: pointer;
-        transition: background-color 0.2s ease;
         justify-content: center;
         align-items: center;
-        }
+        overflow: hidden;
+    }
 
 
-        footer a:hover {
-        background-color: rgba(18, 140, 126, 1);    
-        }
+    footer a::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: #1C1E21;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.70s ease;
+        z-index: 0;
+    }
 
+    
+    footer a span {
+        position: relative;
+        z-index: 1;
+        color: #1C1E21;
+        transition: color 0.25s ease;
+    }
+
+    footer a:hover::before {
+        transform: scaleX(1);
+   
+    }
+
+    footer a:hover span {
+        color: #25D366;
+    }
 
         </style>
 </head>
@@ -46,6 +68,8 @@
 </body>
 
 <footer>
-    <a href="https://wa.me/5551998750244" target="_blank">Mandar mensagem</a>
+  <a href="https://wa.me/5551998750244" target="_blank">
+    <span>Mandar mensagem</span>
+  </a>
 </footer>
 </html>
